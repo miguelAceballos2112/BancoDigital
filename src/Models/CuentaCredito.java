@@ -5,7 +5,7 @@ public class CuentaCredito extends CuentaBanco {
     
     public void comprar(double montoPagar, int numeroCuotas){
         if(cupo>montoPagar) {
-            System.out.println("Comprando a " + numeroCuotas);
+            System.out.println("Comprando a " + numeroCuotas + " cuota");
         }else{
             System.out.println("Compra rechazada, saldo insuficiente");
         }
