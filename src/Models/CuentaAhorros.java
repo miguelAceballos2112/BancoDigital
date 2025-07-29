@@ -1,5 +1,6 @@
-public class CuentaAhorros {
-    public int saldo;
+package Models;
+public class CuentaAhorros extends CuentaBanco{
+    public double saldo;
 
     public void pagar(double montoPagar){
         if(saldo>montoPagar) {

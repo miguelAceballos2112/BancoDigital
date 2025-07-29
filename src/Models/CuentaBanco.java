@@ -1,3 +1,4 @@
+package Models;
 public class CuentaBanco {
     public String tipo;
     public int numeroCuenta;
