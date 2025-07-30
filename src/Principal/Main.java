@@ -21,15 +21,15 @@ public class Main {
 
         // Datos cuenta ahorro
         miguel.cuentaAhorros = cuentaAhorrosMiguel;
-        miguel.cuentaAhorros.numeroCuenta = ingresarEntero("Ingrese le numero de la cuenta: ");
-        miguel.cuentaAhorros.saldo = ingresarRealDouble("Ingrese el saldo de su cuenta: ");
+        miguel.cuentaAhorros.numeroCuenta = ingresarEntero("Ingrese el numero de la cuenta de ahorros: ");
+        miguel.cuentaAhorros.saldo = ingresarRealDouble("Ingrese el saldo de su cuenta de ahorros: ");
         NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(new Locale("es", "CO"));
         String saldoFormateado = formatoMoneda.format(miguel.cuentaAhorros.saldo);
 
         // Datos tarjeta de credito
         miguel.tarjetaCredito = cuentaCreditoMiguel;
-        miguel.tarjetaCredito.numeroCuenta = ingresarEntero("Ingrese le numero de la tarjeta: ");
-        miguel.tarjetaCredito.cupo = ingresarRealDouble("Ingrese el cupo de su tarjeta: ");
+        miguel.tarjetaCredito.numeroCuenta = ingresarEntero("Ingrese el numero de la tarjeta de credito: ");
+        miguel.tarjetaCredito.cupo = ingresarRealDouble("Ingrese el cupo de su tarjeta de credito: ");
 
         NumberFormat formatoMonedaC = NumberFormat.getCurrencyInstance(new Locale("es", "CO"));
         String cupoFormateado = formatoMonedaC.format(miguel.tarjetaCredito.cupo);
@@ -40,13 +40,6 @@ public class Main {
                 + " con un saldo de: " + saldoFormateado + ".");
         System.out.println("Tiene una tarjeta de credito con numero: " + miguel.tarjetaCredito.numeroCuenta
                 + " con un cupo de: " + cupoFormateado + ".");
-
-        // Presentamos info por consola
-        System.out.print(miguel.nombre + " " + miguel.apellido + " con cedula numero : " + miguel.cedula + ".");
-        System.out.print("Tiene una cuenta de ahorros con numero: " + miguel.cuentaAhorros.numeroCuenta
-                + " con un saldo de: " + miguel.cuentaAhorros.saldo + ".");
-        System.out.print("Tiene una tarjeta de credto con numero: " + miguel.tarjetaCredito.numeroCuenta
-                + " con un cupo de: " + miguel.tarjetaCredito.cupo + ".");
 
         // Realizamos una compra
         double precio = ingresarRealDouble("Ingrese el precio de producto a comprar: ");
