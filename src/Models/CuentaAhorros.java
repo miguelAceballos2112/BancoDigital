@@ -1,19 +1,37 @@
 package Models;
-public class CuentaAhorros extends CuentaBanco{
+
+public class CuentaAhorros extends CuentaBanco {
     public double saldo;
 
-    public void pagar(double montoPagar){
-        if(saldo>montoPagar) {
-            System.out.println("Pagando");
-        }else{
-            System.out.println("Pago rechazado, saldo insuficiente");
+    public void pagar(double montoPagar, double saldo) {
+        if (saldo >= montoPagar) {
+            saldo -= montoPagar;
+            System.out.println("Pago exitoso. Saldo actual: " + saldo);
+        } else {
+            System.out.println("Pago rechazado. Saldo insuficiente");
         }
     }
-    public void transferir(double montoTransferir){
-        if(saldo>montoTransferir) {
-            System.out.println("Transaccion exitosa");
-        }else{
+
+    public void transferir(double montoTransferir, double saldo) {
+        if (saldo > montoTransferir) {
+            saldo -= montoTransferir;
+            System.out.println("Transferencia exitosa. Saldo actual: " + saldo);
+        } else {
             System.out.println("Transaccion rechazada, saldo insuficiente");
         }
+    }
+
+    public void retirar(double montoRetirar, double saldo) {
+        if (saldo >= montoRetirar) {
+            saldo -= montoRetirar;
+            System.out.println("Retiro exitoso. Saldo actual: " + saldo);
+        } else {
+            System.out.println("Retiro rechazado, saldo insuficiente");
+        }
+    }
+
+    public void depositar(double montoDepositar, double saldo) {
+        saldo += montoDepositar;
+        System.out.println("Deposito exitoso. Saldo actual: " + saldo);
     }
 }
