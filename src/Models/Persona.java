@@ -8,4 +8,8 @@ public class Persona {
 
     public CuentaAhorros cuentaAhorros;
     public CuentaCredito tarjetaCredito;
+
+    public Persona() {
+        System.out.println("Persona creada.");
+    }
 }
