@@ -10,9 +10,6 @@ import Models.Persona;
 public class Main {
     public static void main(String[] args) {
 
-        CuentaAhorros cuentaAhorrosMiguel = new CuentaAhorros();
-        CuentaCredito cuentaCreditoMiguel = new CuentaCredito();
-
         // Datos personales
         int cedula = ingresarEntero("Ingrese la cedula: ");
         String nombre = ingresarTexto("Ingrese el nombre: ");
@@ -21,18 +18,22 @@ public class Main {
         Persona miguel = new Persona(cedula, nombre, apellido);
 
         // Datos cuenta ahorro
-        miguel.cuentaAhorros = cuentaAhorrosMiguel;
-        miguel.cuentaAhorros.numeroCuenta = ingresarEntero("Ingrese el numero de la cuenta de ahorros: ");
-        miguel.cuentaAhorros.saldo = ingresarRealDouble("Ingrese el saldo de su cuenta de ahorros: ");
+
+        int numeroCuentaAhorros = ingresarEntero("Ingrese el numero de la cuenta de ahorros: ");
         NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(new Locale("es", "CO"));
+        CuentaAhorros cuentaAhorrosMiguel = new CuentaAhorros(numeroCuentaAhorros,
+                miguel.nombre + " " + miguel.apellido);
+        miguel.cuentaAhorros = cuentaAhorrosMiguel;
         String saldoFormateado = formatoMoneda.format(miguel.cuentaAhorros.saldo);
 
         // Datos tarjeta de credito
-        miguel.tarjetaCredito = cuentaCreditoMiguel;
-        miguel.tarjetaCredito.numeroCuenta = ingresarEntero("Ingrese el numero de la tarjeta de credito: ");
-        miguel.tarjetaCredito.cupo = ingresarRealDouble("Ingrese el cupo de su tarjeta de credito: ");
 
+        int numeroCuentaCredito = ingresarEntero("Ingrese el numero de la tarjeta de credito: ");
+        double cupo = ingresarRealDouble("Ingrese el cupo de su tarjeta de credito: ");
         NumberFormat formatoMonedaC = NumberFormat.getCurrencyInstance(new Locale("es", "CO"));
+        CuentaCredito cuentaCreditoMiguel = new CuentaCredito(numeroCuentaCredito,
+                miguel.nombre + " " + miguel.apellido, cupo);
+        miguel.tarjetaCredito = cuentaCreditoMiguel;
         String cupoFormateado = formatoMonedaC.format(miguel.tarjetaCredito.cupo);
 
         // Presentamos info por consola

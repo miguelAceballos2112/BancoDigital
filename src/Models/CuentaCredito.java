@@ -5,6 +5,12 @@ public class CuentaCredito extends CuentaBanco {
     public int cuotas;
     public double deuda;
 
+    public CuentaCredito(int numeroCuenta, String titular, double cupo) {
+        super("Cuenta de Credito", numeroCuenta, titular);
+        this.cupo = cupo;
+        this.deuda = 0.0;
+    }
+
     public void comprar(double montoPagar, int numeroCuotas) {
         if (cupo < montoPagar) {
             deuda += montoPagar;

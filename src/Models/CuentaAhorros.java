@@ -3,6 +3,11 @@ package Models;
 public class CuentaAhorros extends CuentaBanco {
     public double saldo;
 
+    public CuentaAhorros(int numeroCuenta, String titular) {
+        super("Cuenta de Ahorros", numeroCuenta, titular);
+        this.saldo = 0.0;
+    }
+
     public void pagar(double montoPagar, double saldo) {
         if (saldo >= montoPagar) {
             saldo -= montoPagar;

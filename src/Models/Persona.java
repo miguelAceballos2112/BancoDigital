@@ -9,9 +9,7 @@ public class Persona {
     public CuentaAhorros cuentaAhorros;
     public CuentaCredito tarjetaCredito;
 
-    private Persona() { }
-
-    public Persona(int cedula, String nombre, String apellido) { 
+    public Persona(int cedula, String nombre, String apellido) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
