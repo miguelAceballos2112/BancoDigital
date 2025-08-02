@@ -1,9 +1,26 @@
 package Models;
 
 public class CuentaCredito extends CuentaBanco {
-    public double cupo;
-    public int cuotas;
-    public double deuda;
+    private double cupo;
+    private double deuda;
+
+    // Getter
+    public double getCupo() {
+        return cupo;
+    }
+
+    public double getDeuda() {
+        return deuda;
+    }
+
+    // Setter
+    public void setCupo(double cupo) {
+        this.cupo = cupo;
+    }
+
+    public void setDeuda(double deuda) {
+        this.deuda = deuda;
+    }
 
     public CuentaCredito(int numeroCuenta, String titular, double cupo) {
         super("Cuenta de Credito", numeroCuenta, titular);
