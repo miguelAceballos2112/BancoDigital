@@ -9,7 +9,11 @@ public class Persona {
     public CuentaAhorros cuentaAhorros;
     public CuentaCredito tarjetaCredito;
 
-    public Persona() {
-        System.out.println("Persona creada.");
+    private Persona() { }
+
+    public Persona(int cedula, String nombre, String apellido) { 
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
 }

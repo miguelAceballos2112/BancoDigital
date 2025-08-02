@@ -10,14 +10,15 @@ import Models.Persona;
 public class Main {
     public static void main(String[] args) {
 
-        Persona miguel = new Persona();
         CuentaAhorros cuentaAhorrosMiguel = new CuentaAhorros();
         CuentaCredito cuentaCreditoMiguel = new CuentaCredito();
 
         // Datos personales
-        miguel.cedula = ingresarEntero("Ingrese la cedula: ");
-        miguel.nombre = ingresarTexto("Ingrese el nombre: ");
-        miguel.apellido = ingresarTexto("Ingrese el apellido: ");
+        int cedula = ingresarEntero("Ingrese la cedula: ");
+        String nombre = ingresarTexto("Ingrese el nombre: ");
+        String apellido = ingresarTexto("Ingrese el apellido: ");
+
+        Persona miguel = new Persona(cedula, nombre, apellido);
 
         // Datos cuenta ahorro
         miguel.cuentaAhorros = cuentaAhorrosMiguel;
