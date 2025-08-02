@@ -34,4 +34,8 @@ public class CuentaAhorros extends CuentaBanco {
         saldo += montoDepositar;
         System.out.println("Deposito exitoso. Saldo actual: " + saldo);
     }
+
+    public void consultarSaldo() {
+        System.out.println("Saldo actual: " + saldo);
+    }
 }
