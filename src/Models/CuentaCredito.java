@@ -3,6 +3,7 @@ package Models;
 public class CuentaCredito extends CuentaBanco {
     private double cupo;
     private double deuda;
+    private double cupoDisponible;
 
     // Getter
     public double getCupo() {
@@ -26,11 +27,13 @@ public class CuentaCredito extends CuentaBanco {
         super("Cuenta de Credito", numeroCuenta, titular);
         this.cupo = cupo;
         this.deuda = 0.0;
+        this.cupoDisponible = cupo;
     }
 
     public void comprar(double montoPagar, int numeroCuotas) {
-        if (cupo < montoPagar) {
+        if (cupoDisponible >= montoPagar) {
             deuda += montoPagar;
+            cupoDisponible = cupo - deuda;
             System.out.println("Comprando a " + numeroCuotas + " cuota");
         } else {
             System.out.println("Compra rechazada, deuda superada");
@@ -38,9 +41,9 @@ public class CuentaCredito extends CuentaBanco {
     }
 
     public void pagarTarjeta(double montoPagar) {
-        if (deuda >= cupo) {
+        if (deuda > 0) {
             deuda -= montoPagar;
-            cupo = cupo - deuda;
+            cupoDisponible = cupo - deuda;
             System.out.println("Pago exitoso. Deuda actual: " + deuda + ", nuevo cupo: " + cupo);
         }
     }

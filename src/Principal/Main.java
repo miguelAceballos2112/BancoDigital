@@ -44,6 +44,9 @@ public class Main {
         double precio = ingresarRealDouble("Ingrese el precio de producto a comprar: ");
         int cuotas = ingresarEntero("Ingrese el numero de cuotas: ");
         miguel.getTarjetaCredito().comprar(precio, cuotas);
+        precio = ingresarRealDouble("Ingrese el precio de producto a comprar: ");
+        cuotas = ingresarEntero("Ingrese el numero de cuotas: ");
+        miguel.getTarjetaCredito().comprar(precio, cuotas);
     }
 
     public static String ingresarTexto(String mensaje) {
