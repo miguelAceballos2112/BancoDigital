@@ -4,6 +4,7 @@ public class CuentaBanco {
     private String tipo;
     private int numeroCuenta;
     private String titular;
+    protected double saldo;
 
     // Getter
     public String getTipo() {
@@ -18,6 +19,10 @@ public class CuentaBanco {
         return titular;
     }
 
+    public double getSaldo() {
+        return saldo;
+    }
+
     // Setter
     public void setTipo(String tipo) {
         this.tipo = tipo;
@@ -29,6 +34,10 @@ public class CuentaBanco {
 
     public void setTitular(String titular) {
         this.titular = titular;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     public CuentaBanco(String tipo, int numeroCuenta, String titular) {

@@ -1,17 +1,6 @@
 package Models;
 
 public class CuentaAhorros extends CuentaBanco {
-    private double saldo;
-
-    // Getter
-    public double getSaldo() {
-        return saldo;
-    }
-
-    // Setter
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
 
     public CuentaAhorros(int numeroCuenta, String titular) {
         super("Cuenta de Ahorros", numeroCuenta, titular);
